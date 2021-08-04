@@ -17,7 +17,7 @@ export class AnalyticsComponent implements OnInit {
   cargaHoraria: CargaHorariaModel[] = [];
 
   /**
-   *
+   * o
    */
   constructor(private cargaHorariaService: CargaHorariaService) {
     this.cargaHorariaService.listaCargaHorariaObservable().subscribe(res => {
