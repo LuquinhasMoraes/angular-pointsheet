@@ -51,12 +51,16 @@ import {LayoutComponent} from './DemoPages/Forms/Elements/layout/layout.componen
 // Charts
 
 import {ChartjsComponent} from './DemoPages/Charts/chartjs/chartjs.component';
+import { EditarComponent } from './CargaHoraria/Formularios/editar/editar.component';
 
 const routes: Routes = [
   {
     path: '',
     component: BaseLayoutComponent,
     children: [
+
+      // Carga Horaria
+      {path: 'carga-horaria/editar/:id', component: EditarComponent, data: {extraParameter: 'dashboardsMenu'}},
 
       // Dashboads
 

@@ -12,10 +12,8 @@ import { environment } from 'src/environments/environment';
 // CONSTANT
 @Injectable()
 export class HttpService {
-  private environment = "http://pointsheet-api.azurewebsites.net/";
-  private tokenCadastroExterno;
-  private tokenRemuneracao;
-  private domain: string = '';
+  // private environment = "https://pointsheet-api.azurewebsites.net/";
+  private environment = "http://localhost:9753/";
   public isSessionExpireOnce = false;
   idEscitorio: string;
 

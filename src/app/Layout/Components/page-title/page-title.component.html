@@ -13,14 +13,47 @@
       </div>
     </div>
     <div class="page-title-actions">
-      <button type="button" class="btn-shadow mr-3 btn btn-dark">
-        <fa name="star"></fa>
-        Folgar
-      </button>
-      <button type="button" class="btn-shadow d-inline-flex align-items-center btn btn-success" (click)="iniciaJornadaDeTrabalho();">
-        <fa class="mr-2" name="plus"></fa>
-        Iniciar expediente
-      </button>
+      
+      <div class="" *ngIf="!isFolga">
+        <div *ngIf="relex">
+          <button type="button" class="btn-shadow mr-3 btn btn-dark" (click)="criaFolga()">
+            <fa name="star"></fa>
+            Folgar
+          </button>
+          <button type="button" class="btn-shadow d-inline-flex align-items-center btn btn-success" (click)="iniciaJornadaDeTrabalho();">
+            <fa class="mr-2" name="plus"></fa>
+            Iniciar expediente
+          </button>
+        </div>
+  
+        <div *ngIf="isTrabalhando">
+          <button type="button" class="btn-shadow d-inline-flex align-items-center btn btn-success" (click)="atualizaExpediente(1);">
+            <fa class="mr-2" name="plus"></fa>
+            Iniciar Almoço
+          </button>
+        </div>
+  
+        <div *ngIf="isAlmocando">
+          <button type="button" class="btn-shadow d-inline-flex align-items-center btn btn-success" (click)="atualizaExpediente(2);">
+            <fa class="mr-2" name="plus"></fa>
+            Encerrar Almoço
+          </button>
+        </div>
+  
+        <div *ngIf="isTerminoAlmoco">
+          <button type="button" class="btn-shadow d-inline-flex align-items-center btn btn-success" (click)="atualizaExpediente(3);">
+            <fa class="mr-2" name="plus"></fa>
+            Encerrar expediente
+          </button>
+        </div>
+      </div>
+
+      
+
+      <!-- <div *ngIf="isTerminoJornada">
+        <h4>Horas de trabalho: 4:30</h4>
+      </div> -->
+
     </div>
   </div>
 </div>

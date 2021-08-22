@@ -104,6 +104,8 @@ import {DynamicChartComponent} from './DemoPages/Charts/chartjs/examples/dynamic
 import {DoughnutChartComponent} from './DemoPages/Charts/chartjs/examples/doughnut-chart/doughnut-chart.component';
 import {PieChartComponent} from './DemoPages/Charts/chartjs/examples/pie-chart/pie-chart.component';
 import { SharedModule } from './shared/shared.module';
+import { EditarComponent } from './CargaHoraria/Formularios/editar/editar.component';
+import { LoadingComponent } from './DemoPages/Components/loading/loading.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -194,6 +196,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     DynamicChartComponent,
     BubbleChartComponent,
     ScatterChartComponent,
+    EditarComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

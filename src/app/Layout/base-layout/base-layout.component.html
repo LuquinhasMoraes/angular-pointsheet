@@ -7,6 +7,7 @@
 }" [class]="'app-container app-theme-white'">
   <app-header></app-header>
   <app-sidebar></app-sidebar>
+  <app-loading></app-loading>
   <div class="app-main__outer">
     <div class="app-main__inner">
       <div [@architectUIAnimation]="o.isActivated ? o.activatedRoute : ''">
@@ -17,4 +18,5 @@
   </div>
   <div class="sidebar-menu-overlay" (click)="toggleSidebarMobile()"></div>
 </div>
-<ngx-loading-bar [color]="'var(--primary)'"></ngx-loading-bar>
+
+<ngx-loading-bar [color]="'#000'"></ngx-loading-bar>

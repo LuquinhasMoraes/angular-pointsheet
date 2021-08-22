@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Color} from 'ng2-charts/ng2-charts';
 import CargaHorariaModel from 'src/app/Models/CargaHoraria.model';
 import { CargaHorariaService } from 'src/app/shared/Services/carga-horaria.service';
+import { LoadingService } from 'src/app/shared/Services/Loading/loading.service';
 
 @Component({
   selector: 'app-analytics',
@@ -11,18 +12,58 @@ export class AnalyticsComponent implements OnInit {
 
   date = new Date();
   heading = 'Vai trabalhar hoje?';
-  subheading = 'Frase do dia: Nada é tão horrível que não possa melhorar!';
+  subheading = 'Frase do dia: Se alguém te ofendeu sem você merecer, volte lá e mereça!';
   icon = 'pe-7s-plane icon-gradient bg-tempting-azure';
 
   cargaHoraria: CargaHorariaModel[] = [];
 
   /**
-   * oi
-   */
-  constructor(private cargaHorariaService: CargaHorariaService) {
-    this.cargaHorariaService.listaCargaHorariaObservable().subscribe(res => {
+   * Informações de indicadores
+  */
+  public totalHorasTrabalhadas: string;
+  public totalDiasTrabalhados: number;
+  public totalFolgas: number;
+  public totalDiffHoras: string;
+  public mediaDeTempoDeAlmoco: string;
+
+  constructor(private cargaHorariaService: CargaHorariaService, private loadingService: LoadingService) {
+    this.dataLoader();
+  }
+
+  dataLoader() {
+    this.listaCargaHoraria();
+    this.atualizaIndicadores();
+  }
+
+  listaCargaHoraria() {
+    this.loadingService.setLoading(true);
+    this.cargaHorariaService.listaCargaHorariaObservable().subscribe(res => {   
       this.cargaHoraria = res;
+      this.loadingService.setLoading(false);
     })
+  }
+
+  atualizaIndicadores() {
+  
+    this.cargaHorariaService.getMediaTempoDeAlmoco().subscribe(media => {
+      this.mediaDeTempoDeAlmoco = media;
+    });
+
+    this.cargaHorariaService.getTotalHorasTrabalhadas().subscribe(total => {
+      this.totalHorasTrabalhadas = total;
+    });
+
+    this.cargaHorariaService.getTotalDiasTrabalhados().subscribe(total => {
+      this.totalDiasTrabalhados = total;
+    });
+
+    this.cargaHorariaService.getTotalFolgas().subscribe(total => {
+      this.totalFolgas = total;
+    });
+
+    this.cargaHorariaService.getTotalDiffHoras().subscribe(total => {
+      this.totalDiffHoras = total;
+    });
   }
 
   slideConfig6 = {

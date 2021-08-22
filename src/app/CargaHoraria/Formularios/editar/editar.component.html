@@ -1,0 +1,69 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+<div class="row">
+  <div class="col-md-12">
+    <div class="main-card mb-3 card">
+      <div class="card-body">
+        <!-- <h5 class="card-title">Edição da carga horária: 20/08/2021</h5> -->
+
+        
+        <form>
+          <div class="row">
+            
+            <div class="col-md-12">
+              <h5 class="card-title"><small><b>Início da jornada</b></small></h5>
+              <hr>
+            </div>
+
+            <div class="col-md-6">
+              <div class="position-relative form-group">
+                <label for="exampleEmail">Data de entrada:</label>
+                <input name="dataEntrada" id="dataEntrada" placeholder="Data de Entrada" type="date" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="position-relative form-group">
+                <label for="exampleEmail">Hora de entrada:</label>
+                <input name="dataEntrada" id="inicioJornada" placeholder="Data de Entrada" type="time" class="form-control">
+              </div>
+            </div>
+
+            
+            <div class="col-md-12">
+              <h5 class="card-title"><small><b>Período de almoço</b></small></h5>
+              <hr>
+            </div>
+
+            <div class="col-md-6"> 
+              <div class="position-relative form-group">
+                <label for="exampleEmail">Início:</label>
+                <input name="inicioAlmoco" id="inicioAlmoco" placeholder="Data de Entrada" type="date" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="position-relative form-group">
+                <label for="exampleEmail">Fim</label>
+                <input name="fimAlmoco" id="fimAlmoco" placeholder="Data de Entrada" type="time" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <h5 class="card-title"><small><b>Fim da jornada</b></small></h5>
+              <hr>
+            </div>
+
+            <div class="col-md-6"> 
+              <div class="position-relative form-group">
+                <label for="exampleEmail">Fim do expediente:</label>
+                <input name="fimJornada" id="fimJornada" placeholder="Data de Entrada" type="time" class="form-control">
+              </div>
+            </div>
+            
+
+            
+          </div>
+          <button class="mt-1 btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
